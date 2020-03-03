@@ -3,14 +3,11 @@ using Nancy.Bootstrapper;
 using Nancy.Configuration;
 using Nancy.Conventions;
 using Nancy.TinyIoc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
-namespace groccit_rest_api
+namespace groccit
 {
-    public class Bootstrap: Nancy.DefaultNancyBootstrapper
+    
+    public class Bootstrap: DefaultNancyBootstrapper
     {
         public override void Configure(INancyEnvironment environment)
         {
@@ -38,15 +35,6 @@ namespace groccit_rest_api
 
 
 
-
-        protected override void ConfigureConventions(NancyConventions nancyConventions)
-        {
-            base.ConfigureConventions(nancyConventions);
-
-            nancyConventions.StaticContentsConventions.Add(
-                StaticContentConventionBuilder.AddDirectory("/swagger-ui/dist")
-            );
-        }
 
     }
 }
